@@ -201,8 +201,13 @@ else		{ CTokElse	_ }
 enum		{ CTokEnum	_ }
 extern		{ CTokExtern	_ }
 float		{ CTokFloat	_ }
+"_Float32"	{ CTokFloat32	_ }
+"_Float32x"	{ CTokFloat32	_ }
+"_Float64"	{ CTokFloat64	_ }
+"_Float64x"	{ CTokFloat64	_ }
 "__float128"	{ CTokFloat128	_ }
 "_Float128"	{ CTokFloat128	_ }
+"_Float128x"	{ CTokFloat128	_ }
 for		{ CTokFor	_ }
 "_Generic"      { CTokGeneric   _ }
 goto		{ CTokGoto	_ }
@@ -875,8 +880,13 @@ basic_type_name
   | "_Bool"			{% withNodeInfo $1 $ CBoolType }
   | "_Complex"			{% withNodeInfo $1 $ CComplexType }
   | "__int128"      {% withNodeInfo $1 $ CInt128Type }
+  | "_Float32"      {% withNodeInfo $1 $ CFloat32Type }
+  | "_Float32x"      {% withNodeInfo $1 $ CFloat32Type }
+  | "_Float64"      {% withNodeInfo $1 $ CFloat64Type }
+  | "_Float64x"      {% withNodeInfo $1 $ CFloat64Type }
   | "__float128"      {% withNodeInfo $1 $ CFloat128Type }
   | "_Float128"      {% withNodeInfo $1 $ CFloat128Type }
+  | "_Float128x"      {% withNodeInfo $1 $ CFloat128Type }
 
 
 -- A mixture of type qualifiers, storage class and basic type names in any
